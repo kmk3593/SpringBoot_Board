@@ -20,7 +20,7 @@ public class BoardDTO {
 
 	/** 작성자 */
 	private String writer;
-
+ 
 	/** 조회 수 */
 	private int viewCnt;
 
