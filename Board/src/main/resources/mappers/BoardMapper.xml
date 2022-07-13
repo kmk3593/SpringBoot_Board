@@ -66,6 +66,7 @@
 			idx = #{idx}
 	</update>
 
+
 	<select id="selectBoardList" parameterType="BoardDTO" resultType="BoardDTO">
 		SELECT
 			<include refid="boardColumns" />
@@ -73,10 +74,12 @@
 			tb_board
 		WHERE
 			delete_yn = 'N'
+			<include refid="CommonMapper.search" />
 		ORDER BY
 			notice_yn ASC,
 			idx DESC,
 			insert_time DESC
+			<include refid="CommonMapper.paging" />
 	</select>
 
 	<select id="selectBoardTotalCount" parameterType="BoardDTO" resultType="int">
@@ -86,6 +89,7 @@
 			tb_board
 		WHERE
 			delete_yn = 'N'
+			<include refid="CommonMapper.search" />
 	</select>
 
 </mapper>
